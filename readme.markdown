@@ -1,4 +1,4 @@
-![ftco.png][1]
+[![ftco.png][1]][3]
 
 > This browser extension unwraps t.co links in Tweet Deck and Twitter.com, making your experience faster and less cumbersome
 
