@@ -6,11 +6,12 @@ document.addEventListener('mousedown', clicked, false);
 
 function clicked (e) {
   var a = e.target;
-  while (a && a.tagName !== 'A') {
+  while (a) {
+    if (a.tagName === 'A') {
+      expand(a);
+      return;
+    }
     a = a.parentElement;
-  }
-  if (a) {
-    expand(a);
   }
 }
 
