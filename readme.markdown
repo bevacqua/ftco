@@ -10,4 +10,4 @@ Clone this repository and use _"Load unpacked extensions..."_ in Chrome.
 
 MIT
 
-[1]:
+[1]: https://rawgit.com/bevacqua/ftco/master/ftco.png
