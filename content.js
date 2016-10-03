@@ -5,13 +5,9 @@ var rprotocol = /^https?:\/\//;
 document.addEventListener('mousedown', clicked, false);
 
 function clicked (e) {
-  var a = e.target;
-  while (a) {
-    if (a.tagName === 'A') {
-      expand(a);
-      return;
-    }
-    a = a.parentElement;
+  var a = e.target.closest('a');
+  if (a) {
+    expand(a);
   }
 }
 
