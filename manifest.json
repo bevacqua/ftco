@@ -9,10 +9,5 @@
   "content_scripts": [{
     "matches": ["https://twitter.com/*", "https://*.twitter.com/*"],
     "js": ["background.js"]
-  }],
-  "permissions": [
-    "tabs",
-    "https://twitter.com/*",
-    "https://*.twitter.com/*"
-  ]
+  }]
 }
