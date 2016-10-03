@@ -5,23 +5,19 @@ var rprotocol = /^https?:\/\//;
 document.addEventListener('mousedown', clicked, false);
 
 function clicked (e) {
-  var a = e.target;
-  while (a) {
-    if (a.tagName === 'A') {
-      expand(a);
-      return;
-    }
-    a = a.parentElement;
+  var a = e.target.closest('a');
+  if (a) {
+    expand(a);
   }
 }
 
 function expand (a) {
-  var expanded = a.getAttribute('data-expanded-url');
+  var expanded = a.dataset.expandedUrl;
   if (expanded) {
     a.href = expanded;
     return;
   }
-  var title = a.getAttribute('title');
+  var title = a.title;
   if (rprotocol.test(title)) {
     a.href = title;
   }
