@@ -12,12 +12,12 @@ function clicked (e) {
 }
 
 function expand (a) {
-  var expanded = a.getAttribute('data-expanded-url');
+  var expanded = a.dataset.expandedUrl;
   if (expanded) {
     a.href = expanded;
     return;
   }
-  var title = a.getAttribute('title');
+  var title = a.title;
   if (rprotocol.test(title)) {
     a.href = title;
   }
