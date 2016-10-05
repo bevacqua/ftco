@@ -21,6 +21,7 @@ function expand (a, source = a) {
   const title = source.title;
   if (rprotocol.test(title)) {
     a.href = title;
+    return;
   }
   if (window.frameElement) {
     expand(a, window.frameElement.closest(tweetSelector).querySelector(cardLinkSelector));
