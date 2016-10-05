@@ -1,24 +1,28 @@
 'use strict';
 
-var rprotocol = /^https?:\/\//;
+const rprotocol = /^https?:\/\//;
+const tweetSelector = '.tweet';
+const cardLinkSelector = '.twitter-timeline-link.u-hidden:last-child';
 
 document.addEventListener('mousedown', clicked, false);
 
 function clicked (e) {
-  var a = e.target.closest('a');
-  if (a) {
-    expand(a);
-  }
+  expand(e.target.closest('a'));
 }
-
-function expand (a) {
-  var expanded = a.dataset.expandedUrl;
+function expand (a, source = a) {
+  if (!a) {
+    return;
+  }
+  const expanded = source.dataset.expandedUrl;
   if (expanded) {
     a.href = expanded;
     return;
   }
-  var title = a.title;
+  const title = source.title;
   if (rprotocol.test(title)) {
     a.href = title;
+  }
+  if (window.frameElement) {
+    expand(a, window.frameElement.closest(tweetSelector).querySelector(cardLinkSelector));
   }
 }
