@@ -18,6 +18,11 @@ function expand (a, source = a) {
     a.href = expanded;
     return;
   }
+  const full = source.dataset.fullUrl;
+  if (full) {
+    a.href = full;
+    return;
+  }
   const title = source.title;
   if (rprotocol.test(title)) {
     a.href = title;
